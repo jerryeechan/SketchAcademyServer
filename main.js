@@ -5,11 +5,21 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+var app = express()
+//app.use('/css', express.static('css'));
+app.use(express.static('public'));
+app.use((req, res) => res.sendFile(INDEX));
+var server = require('http').Server(app);
+server.listen(PORT);
 
-const io = socketIO(server);
+var io = socketIO(server);
+//app.use((req, res) => res.sendFile(INDEX)).listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+
+
+
+
+
 
 io.on('connection', (socket) => {
   console.log('Client connected');
