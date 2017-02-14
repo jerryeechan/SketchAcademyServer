@@ -198,6 +198,7 @@ section.success {
   }
 }
 #portfolio .portfolio-item {
+
   margin: 0 0 15px;
   right: 0;
 }
@@ -208,6 +209,7 @@ section.success {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .caption {
+  
   background: rgba(24, 188, 156, 0.9);
   position: absolute;
   width: 100%;

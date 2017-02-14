@@ -7,6 +7,12 @@
     <meta name="author" content="jerry">
 
     <title>Sketch Academy</title>
+     <!-- Comment #1: OG Tags -->
+      <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="Your Website Title" />
+      <meta property="og:description"   content="Your description" />
+      <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +48,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Sketch Academy</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,13 +58,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#portfolio"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="#about">關於SketchAcademy</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">聯絡我們</a>
                     </li>
                 </ul>
             </div>
@@ -68,9 +74,12 @@
     </nav>
 
     <!-- Header -->
+    
+
     <div id="plane" class="container">
         <div class="row content">
             <div class="col-md-12 col-lg-8 col-lg-offset-2">
+                <span class="name" data-in-effect="rollIn">每日畫圖挑戰題目產生器</span>
                 <div class="well">
                     <div>你看到...</div>
 
@@ -93,8 +102,47 @@
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
+    <div id="casino" style="padding-top:50px;">
+            <div class="content">
+                <div>
+                    <div id="casino1" class="slotMachine" style="margin-left: -65px;">
+                        <div class="slot slot1"><p>Allie</p></div>
+                        <div class="slot slot2"><p>楊期蘭</p></div>
+                        <div class="slot slot3"><p>Chang</p></div>
+                        <div class="slot slot4"><p>Jerry</p></div>
+                        <div class="slot slot5"><p>Chan</p></div>
+                        <div class="slot slot6"><p>楊期蘭</p></div>
+                    </div>
+
+                    <div id="casino2" class="slotMachine">
+                        <div class="slot slot1"></div>
+                        <div class="slot slot2"></div>
+                        <div class="slot slot3"></div>
+                        <div class="slot slot4"></div>
+                        <div class="slot slot5"></div>
+                        <div class="slot slot6"></div>
+                    </div>
+
+                    <div id="casino3" class="slotMachine">
+                        <div class="slot slot1"></div>
+                        <div class="slot slot2"></div>
+                        <div class="slot slot3"></div>
+                        <div class="slot slot4"></div>
+                        <div class="slot slot5"></div>
+                        <div class="slot slot6"></div>
+                    </div>
+
+                    <div class="btn-group btn-group-justified btn-group-casino" role="group">
+                        <div id="slotMachineButtonShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</div>
+                        <div id="slotMachineButtonStop" type="button" class="btn btn-primary btn-lg">Stop!</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
     <header>
         <div class="container">
             <div class="row">
@@ -103,7 +151,7 @@
                     <div class="intro-text">
                         <span class="name" data-in-effect="rollIn">Sketch Academy</span>
                         <hr class="star-light">
-                        <span class="skills">從基礎學習繪畫</span>
+                        <span class="skills">跟著遊戲學畫畫的社群平台</span>
                     </div>
                 </div>
             </div>
@@ -137,7 +185,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                        <img src="img/demo1.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -147,39 +195,10 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <img src="img/demo3.png" class="img-responsive" alt="">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-                    </a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -195,16 +214,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                    <p>SketchAcademy是一個繪畫創作分享與學習互動的社群，期望幫助想培養創造力與繪畫創作技能的朋友有更多機會取得繪畫創作學習資源以及與社群交流的機會。</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p>我們正在開發iPad Pro上的SketchAcademy App，它能夠記錄你所有的繪畫過程、重播、分段，你可以輕鬆的轉換成畫圖教材，分享給其他人</p>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
-                    </a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -214,14 +229,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
+                    <h2>聯絡我們</h2>
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row">
+            <div class="row">            
                 <div class="col-lg-8 col-lg-offset-2">
+
+                <div align="center" class="fb-page" data-href="https://www.facebook.com/SketchAcademy/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SketchAcademy/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SketchAcademy/">SketchAcademy</a></blockquote></div>
+
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <!--
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -259,6 +278,7 @@
                             </div>
                         </div>
                     </form>
+                    -->
                 </div>
             </div>
         </div>
@@ -542,6 +562,19 @@
             </div>
         </div>
     </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=652198954883665";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+              <!-- Comment #4: Plugin Code -->
+              <div class="fb-quote"></div>
+
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
     <script>
       // Initialize Firebase

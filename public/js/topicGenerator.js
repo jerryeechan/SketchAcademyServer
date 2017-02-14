@@ -30,3 +30,45 @@ $(document).ready(function(){
 	});
 	machine.shuffle(10);
 });
+
+
+$(document).ready(function(){
+				var machine4 = $("#casino1").slotMachine({
+					active	: 0,
+					delay	: 500
+				});
+
+				var machine5 = $("#casino2").slotMachine({
+					active	: 1,
+					delay	: 500
+				});
+
+				machine6 = $("#casino3").slotMachine({
+					active	: 2,
+					delay	: 500
+				});
+
+				var started = 0;
+
+				$("#slotMachineButtonShuffle").click(function(){
+					started = 3;
+					machine4.shuffle();
+					machine5.shuffle();
+					machine6.shuffle();
+				});
+
+				$("#slotMachineButtonStop").click(function(){
+					switch(started){
+						case 3:
+							machine4.stop();
+							break;
+						case 2:
+							machine5.stop();
+							break;
+						case 1:
+							machine6.stop();
+							break;
+					}
+					started--;
+				});
+			});
