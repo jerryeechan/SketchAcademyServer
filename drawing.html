@@ -45,7 +45,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Sketch Academy</a>
+                <a class="navbar-brand">Sketch Academy 垃圾鴿創意工具包 </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,7 +63,9 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-  <img src="img/bird1.jpg" style="display:none;" id="profile">
+  <img src="img/bird1.png" style="display:none;" id="bird1">
+  <img src="img/bird2.png" style="display:none;" id="bird2">
+  <img src="img/bird3.png" style="display:none;" id="bird3">
 <script>
 (function() {
 
@@ -116,9 +118,12 @@ label {
 </div>
 <div class="col-lg-4">
 <div style="display: inline-block; margin-left: 10px">
-  <button id="drawing-mode" class="btn btn-info">Cancel drawing mode</button><br>
+  <button id="drawing-mode" class="btn btn-info">進入編輯模式</button><br>
   <button id="clear-canvas" class="btn btn-info">Clear</button><br>
-  <button id="stamp1" class="btn btn-info">垃圾鴿1</button><br>
+  <button id="stamp1" class="btn btn-info">產生垃圾鴿1</button><br>
+  <button id="stamp2" class="btn btn-info">產生垃圾鴿2</button><br>
+  <button id="stamp3" class="btn btn-info">產生垃圾鴿3</button><br>
+  <a id="download" class="btn btn-info">下載作品</button></a>
   <div id="drawing-mode-options">
     <label for="drawing-mode-selector">Mode:</label>
     <select id="drawing-mode-selector">
@@ -145,6 +150,7 @@ label {
 
     <label for="drawing-shadow-offset">Shadow offset:</label>
     <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
+    <div>supported by fabric.js</div>
   </div>
 </div>
 </div>
@@ -171,10 +177,16 @@ label {
       });
       canvas.renderAll();
   }
+  $('#download')[0].onclick = function()
+  {
+    console.log("download");
+    generateLink(this);
+  }
   function generateLink(link)
   {
+    console.log(link);
       link.href = getImage();
-      link.download = "test.png"
+      link.download = "test.png";
   }
   function shareToFB(method)
   {
@@ -193,7 +205,7 @@ label {
   {
     //var appid = '145634995501895';
     canvas.deactivateAll().renderAll();
-    var data = canvas.toDataURL('image/png');
+    var data = canvas.toDataURL();
     try{
     blob = dataURItoBlob(data);
     }catch(e){console.log(e);}
@@ -255,17 +267,23 @@ label {
     canvas.clear() 
   };
   $('#stamp1')[0].onclick = function(){
-    addImageWithDOM($('#profile')[0]);
+    addImageWithDOM($('#bird1')[0]);
+  }
+  $('#stamp2')[0].onclick = function(){
+    addImageWithDOM($('#bird2')[0]);
+  }
+  $('#stamp3')[0].onclick = function(){
+    addImageWithDOM($('#bird3')[0]);
   }
 
   drawingModeEl.onclick = function() {
     canvas.isDrawingMode = !canvas.isDrawingMode;
     if (canvas.isDrawingMode) {
-      drawingModeEl.innerHTML = 'Cancel drawing mode';
+      drawingModeEl.innerHTML = '進入編輯模式';
       drawingOptionsEl.style.display = '';
     }
     else {
-      drawingModeEl.innerHTML = 'Enter drawing mode';
+      drawingModeEl.innerHTML = '進入繪畫模式';
       drawingOptionsEl.style.display = 'none';
     }
   };
