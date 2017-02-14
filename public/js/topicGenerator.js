@@ -20,32 +20,35 @@ var init = function()
 }
 
 
-$(document).ready(function(){
-	var machine = $("#planeMachine").slotMachine({
-	    active  : 1,
-	    delay   : 450,
+// $(document).ready(function(){
+// 	var machine = $("#planeMachine").slotMachine({
+// 	    active  : 1,
+// 	    delay   : 450,
 	    
-	    spins	: 10,
-	    direction: 'down'
-	});
-	machine.shuffle(10);
-});
+// 	    spins	: 10,
+// 	    direction: 'down'
+// 	});
+// 	machine.shuffle(10);
+// });
 
 
 $(document).ready(function(){
 				var machine4 = $("#casino1").slotMachine({
 					active	: 0,
-					delay	: 500
+					delay	: 1000,
+					direction: 'down'
 				});
 
 				var machine5 = $("#casino2").slotMachine({
 					active	: 1,
-					delay	: 500
+					delay	: 1000,
+					direction: 'down'
 				});
 
 				machine6 = $("#casino3").slotMachine({
 					active	: 2,
-					delay	: 500
+					delay	: 1000,
+					direction: 'down'
 				});
 
 				var started = 0;

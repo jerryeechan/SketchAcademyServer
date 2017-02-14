@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="zh_TW">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
       <meta property="og:description"   content="Your description" />
       <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
+    
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,6 +29,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,10 +60,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio"></a>
+                        <a href="#portfolio">產品特色</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">關於SketchAcademy</a>
+                        <a href="#about">願景與理念</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">聯絡我們</a>
@@ -75,12 +77,12 @@
 
     <!-- Header -->
     
-
+    <!--
     <div id="plane" class="container">
         <div class="row content">
             <div class="col-md-12 col-lg-8 col-lg-offset-2">
                 <span class="name" data-in-effect="rollIn">每日畫圖挑戰題目產生器</span>
-                <div class="well">
+                <div>
                     <div>你看到...</div>
 
                     <div id="planeMachine">
@@ -104,10 +106,12 @@
         </div>
 
     </div>
+    -->
     <div id="casino" style="padding-top:50px;">
             <div class="content">
                 <div>
-                    <div id="casino1" class="slotMachine" style="margin-left: -65px;">
+                    <div id="casino1" class="slotMachine">
+                        <div class="slot slot1"><p>??</p></div>
                         <div class="slot slot1"><p>Allie</p></div>
                         <div class="slot slot2"><p>楊期蘭</p></div>
                         <div class="slot slot3"><p>Chang</p></div>
@@ -116,28 +120,32 @@
                         <div class="slot slot6"><p>楊期蘭</p></div>
                     </div>
 
+                    <div class="slotBetween">裡的</div>
                     <div id="casino2" class="slotMachine">
-                        <div class="slot slot1"></div>
-                        <div class="slot slot2"></div>
-                        <div class="slot slot3"></div>
-                        <div class="slot slot4"></div>
-                        <div class="slot slot5"></div>
-                        <div class="slot slot6"></div>
+                    <div class="slot slot1"><p>??</p></div>
+                       <div class="slot slot4"><p>Jerry</p></div>
+                        <div class="slot slot5"><p>Chan</p></div>
+                        <div class="slot slot6"><p>楊期蘭</p></div>
                     </div>
-
+                    <div class="slotBetween"><p>在</p></div>
                     <div id="casino3" class="slotMachine">
-                        <div class="slot slot1"></div>
-                        <div class="slot slot2"></div>
-                        <div class="slot slot3"></div>
-                        <div class="slot slot4"></div>
-                        <div class="slot slot5"></div>
-                        <div class="slot slot6"></div>
+                        <div class="slot slot1"><p>??</p></div>
+                       <div class="slot slot4"><p>Jerry</p></div>
+                        <div class="slot slot5"><p>Chan</p></div>
+                        <div class="slot slot6"><p>楊期蘭</p></div>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="btn-group btn-group-justified btn-group-casino" role="group">
+                            <div id="slotMachineButtonShuffle" type="button" class="casinobtn btn btn-primary btn-lg">抽題目!</div>
+                            <div id="slotMachineButtonStop" type="button" class="casinobtn btn btn-primary btn-lg">停止!</div>
+                        </div>
+                            
+                        <a href="/drawing"><div class="btn-primary btn-lg drawbtn btn">
+                        畫畫去！</div></a>
                     </div>
 
-                    <div class="btn-group btn-group-justified btn-group-casino" role="group">
-                        <div id="slotMachineButtonShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</div>
-                        <div id="slotMachineButtonStop" type="button" class="btn btn-primary btn-lg">Stop!</div>
-                    </div>
+                    
+
                 </div>
 
             </div>
@@ -151,7 +159,7 @@
                     <div class="intro-text">
                         <span class="name" data-in-effect="rollIn">Sketch Academy</span>
                         <hr class="star-light">
-                        <span class="skills">跟著遊戲學畫畫的社群平台</span>
+                        <span class="skills">透過遊戲學畫畫的社群平台</span>
                     </div>
                 </div>
             </div>
@@ -397,10 +405,11 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>繪畫過程記錄</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="img/demo1.png" class="img-responsive img-centered" alt="">
+                            <p>如影片般播放</p>
+                            <!--
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -415,6 +424,7 @@
                                     </strong>
                                 </li>
                             </ul>
+                            -->
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>

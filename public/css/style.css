@@ -283,8 +283,13 @@ header a {
  */
 #casino {
     border-top: 20px dotted rgb(180, 75, 119);
-    border-bottom: 10px solid #A48E4E;
-    background-color: rgb(240, 150, 150);
+    
+    /*orange
+    background-color: rgb(243, 165, 55);
+    
+    theme green
+    */
+    background-color: #18BC9C;
 }
 
 #casino h1 {
@@ -293,14 +298,12 @@ header a {
 
 #casino .content:nth-child(1) {
     text-align: center;
-    background: url('../img/machine.png') no-repeat 50% 80px;
     height: 580px;
 }
 
 #casino .content > div {
     clear:both;
     padding-top: 200px;
-    width: 300px;
     margin: 0 auto;
 }
 
@@ -312,8 +315,8 @@ header a {
 }
 
 .slotMachine{
-	width: 32.333333%;
-	border: 5px solid #000;
+	width: 200px;
+	
 	height: 100px;
 	padding: 0px;
 	overflow: hidden;
@@ -321,20 +324,42 @@ header a {
 	text-align: center;
 	background-color: #ffffff;
 }
+.slotBetween{
+    padding: 0px;
+    display: inline-block;
+}
+.slotBetween p{
+    font-size: 36px;
+    height:100px;text-align:center;line-height:100px;
+}
 
 .btn-group-casino {
-    margin-top: 150px;
-    margin-left: -32px;
+    /*margin-top: 150px;*/
 }
 
+.casinobtn
+{
+    margin: 10px;
+}
 .btn-group-casino .btn {
+    
     border: none;
-    background-color: rgb(209, 79, 119);
+    background-color: rgb(44, 62, 80);
 }
-.btn-group-casino .btn:hover, .btn-group-casino .btn:focus {
-    background-color: rgb(180, 75, 119);
+.btn-group-casino .btn:hover {
+    color: rgb(243, 165, 55);
+    background-color: rgb(70, 80, 100);
 }
 
+.drawbtn{
+    background-color:  rgb(234,23,53);
+    border: 0px;
+    font-size: 48px;
+}
+
+header{
+    background-color: rgb(44, 62, 80);
+}
 /*
  * Footer
  */
@@ -357,7 +382,6 @@ footer{
 	text-align: left;
 }
 
-
 .machineResult{
 	color:#fff;
 	text-align:center;
@@ -371,8 +395,13 @@ footer{
 	height:100px;
 	background-position-x: 55%;
 	background-repeat: no-repeat;
+    
 }
-
+.slotMachine .slot p{
+    margin: 0px;
+    font-size: 36px;
+    height:100px;text-align:center;line-height:100px;
+}
 /*
 .slot1 {
 	background-image: url("../img/slot1.png");

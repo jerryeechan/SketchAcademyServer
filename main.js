@@ -8,7 +8,15 @@ const INDEX = path.join(__dirname, 'index.html');
 var app = express()
 //app.use('/css', express.static('css'));
 app.use(express.static('public'));
-app.use((req, res) => res.sendFile(INDEX));
+//app.use((req, res) => res.sendFile(INDEX));
+app.get('/drawing', function (req, res) {
+  res.sendFile(path.join(__dirname, '/drawing.html'));
+});
+
+app.get('', function(req,res){
+ res.sendfile(__dirname + '/index.html');
+}); 
+
 var server = require('http').Server(app);
 server.listen(PORT);
 
