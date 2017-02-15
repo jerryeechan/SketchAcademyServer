@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>SketchAcademy 畫圖創意工具</title>
+    <title >SketchAcademy 畫圖創意工具</title>
 
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/prism.css">
@@ -33,8 +33,13 @@
         document.write('<script src="' + fabricUrl + '"><\/script>');
       })();
     </script>
+    <script type="text/javascript" src="js/b64.js"></script>
+    <script type="text/javascript" src="js/LZWEncoder.js"></script>
+    <script type="text/javascript" src="js/NeuQuant.js"></script>
+    <script type="text/javascript" src="js/GIFEncoder.js"></script>
+
     <script src="js/fabricSprite.js"></script>
-    <script src="js/gif.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
   </head>
@@ -46,7 +51,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand">Sketch Academy 垃圾鴿創意工具包 </a>
+                <a class="navbar-brand" id="title">Sketch Academy 垃圾鴿創意工具包</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -125,7 +130,9 @@ label {
   <!--
   <button id="stamp2" class="btn btn-info">產生垃圾鴿2</button><br>
   <button id="stamp3" class="btn btn-info">產生垃圾鴿3</button><br>-->
-  <a id="download" class="btn btn-info">下載作品</button></a>
+  <a id="export" class="btn btn-info">下載作品</button></a>
+  <a id="download"></a> 
+  <button id="nextFrame">NextFrame</button>
   <div id="drawing-mode-options">
     <label for="drawing-mode-selector">Mode:</label>
     <select id="drawing-mode-selector">
@@ -150,10 +157,10 @@ label {
 
     <label for="drawing-shadow-width">Shadow width:</label>
     <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
-
     <label for="drawing-shadow-offset">Shadow offset:</label>
     <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
     <div>supported by fabric.js</div>
+    <p id="info" style="font-size: 24px;">INFO</p>
   </div>
 </div>
 </div>
@@ -181,38 +188,68 @@ label {
       });
       canvas.renderAll();
   }
-  $('#download')[0].onclick = function()
+  var downloadElement;
+  $('#export')[0].onclick = function()
   {
     console.log("download");
-    //generateLink(this);
+    downloadElement = $('#download')[0];
     genGIF();
+    //genGIF();
   }
-  var gif;
+  $('#nextFrame')[0].onclick = function()
+  {
+    canvas.renderAll();
+  }
+  var encoder;
   function genGIF(){
+    encoder = new GIFEncoder();
+    /*
     gif = new GIF({
-    workers: 4,
+    workers: 1,
     quality: 10
-    });
+    });*/
     count = 15;
-    // add an image element
-
-    // or a canvas element
+    var delay = 100;
+    encoder.setRepeat(0);
+    encoder.setDelay(100);
+    encoder.start();
+    playingAnim = false;
     
-    //gif.addFrame(canvas.getElement(), {delay: delay});
-    
-    
+    count = 8;
+    renderFrame();
+    $("#title").text("輸出中請稍候！");
+    $("#info").text("輸出中請稍候！");
     // or copy the pixels from a canvas context
     //gif.addFrame(canvas.getContext() , {copy: true});
-
-    
   }
+  function renderFrame()
+  {
+      encoder.addFrame(canvas.getContext());
+      render();
+      if(count>0)
+      {
+          count--;
+          if(count==0)
+          {
+            exportGIF();
+            return;  
+          }
+          setTimeout(renderFrame,10);
+      }
+  }
+
   function exportGIF()
   {
+    encoder.finish();
+    var binary_gif = encoder.stream().getData() //notice this is different from the as3gif package!
+    var data_url = 'data:image/gif;base64,'+encode64(binary_gif);
+    //return data_url;
+    /*
     gif.on('finished', function(blob) {
       window.open(URL.createObjectURL(blob));
     });
-
-    gif.render();
+    gif.render();*/
+    generateLink(downloadElement,data_url);
   }
   function merge()
   {
@@ -227,11 +264,13 @@ label {
     canvas.renderAll();
   }
 
-  function generateLink(link)
+  function generateLink(link,data_url)
   {
-    console.log(link);
-      link.href = getImage();
-      link.download = "test.png";
+      //console.log(link);
+      link.href = data_url;//getImage();
+      link.download = "test.gif";
+      link.click();
+      $('#title').text('Sketch Academy 垃圾鴿創意工具包');
   }
   function shareToFB(method)
   {
@@ -353,22 +392,31 @@ label {
       }, fabric.util.getRandomInt(1, 10) * 100);
     };
   }
+
+  
   var count = 0;
-  (function render() {
+  
+
+  function render()
+  {
     canvas.renderAll();
+  }
+  render();
 
-    if(count>0)
+  var playingAnim = true;
+  function startAnimation()
+  {
+    playingAnim = true;
+    animate();
+  }
+  function animate()
+  {
+    if(playingAnim)
     {
-      gif.addFrame(canvas.getElement(),{delay: 100});
-      count--;
-      if(count==0)
-      { 
-        exportGIF();
-      }
+      render();
+      fabric.util.requestAnimFrame(animate);
     }
-    fabric.util.requestAnimFrame(render);
-
-  })();
+  }
 
 
   canvas.backgroundColor="white";
